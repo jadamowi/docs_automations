@@ -1,8 +1,11 @@
-import PyPDF2
 from pathlib import Path
 
+import PyPDF2
 
-def pdfencryption(inpath, outpath, pdfpass):
+
+def pdfencryption(inpath, 
+                  outpath, 
+                  pdfpass):
     """
     Function loops through the given path looking for PDF files, encrypts them
     and save in a given folder.
@@ -12,7 +15,7 @@ def pdfencryption(inpath, outpath, pdfpass):
     :return: Function does not return any object
     """
 
-    pathlist = Path(inpath).rglob('*.pdf')
+    pathlist = Path(inpath).glob('*.pdf')
 
     for path in pathlist:
         path_in_str = str(path)
